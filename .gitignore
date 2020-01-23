@@ -89,3 +89,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+# Slides from design book
+IGDPD*.ppt
+
+
+
