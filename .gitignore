@@ -90,6 +90,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Office temporary files
+~*
 
 # Slides from design book
 IGDPD*.ppt
