@@ -1,2 +1,6 @@
 # gamedev-5780
-Very first draft of a game-development course
+Game development course. Covers the basics of two fields:
+
+* Game design in a play-centric approach;
+* Game programming using the Unity engine.
+
