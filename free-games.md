@@ -32,8 +32,9 @@
 -   [Reddit freegames](Reddit%20freegames) – גולשים מפרסמים משחקים שניתנים בחינם
     לזמן מוגבל.
 
--   [Humble bundle](https://www.humblebundle.com/store) – טוענים בכל חודש יש להם
-    כמה משחקים בחינם.
+-   [Humble bundle](https://www.humblebundle.com/store) – טוענים שבכל חודש יש
+    להם כמה משחקים בחינם
 
--   [Steam gifts](https://www.steamgifts.com/) – טוענים שהם מחלקים מפתחות
-    למשחקים במנוע Steam.
+-   [Steam powered](https://www.steampowered.com/) –מדי פעם מחלקים שם משחקים
+    בחינם . [Steam gifts](https://www.steamgifts.com/) – טוענים שהם מחלקים
+    מפתחות למשחקים במנוע.
