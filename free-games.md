@@ -16,9 +16,8 @@
 -   [Board game arena](Board%20game%20arena) – מעל 100 משחקי-לוח ישנים וחדשים
     אונליין.
 
--   מעל 1000 גירסאות של שחמט בויקיפדיה, בחלקן אפשר לשחק אונליין ובחלקן צריך לוח
-    ממש - [List of Chess
-    Variants](https://en.wikipedia.org/wiki/List_of_chess_variants)
+-   [List of Chess
+    Variants](https://en.wikipedia.org/wiki/List_of_chess_variants) -  מעל 1000 גירסאות של שחמט בויקיפדיה, בחלקן אפשר לשחק אונליין ובחלקן צריך לוח  ממש.
 
 -   [Microsoft top free
     games](https://www.microsoft.com/en-us/store/top-free/games/pc?s=store&skipitems=90)
