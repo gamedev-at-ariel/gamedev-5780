@@ -1,3 +1,5 @@
+<div dir='rtl'>
+
 משחקים בחינם
 ============
 
@@ -37,3 +39,6 @@
 -   [Steam powered](https://www.steampowered.com/) –מדי פעם מחלקים שם משחקים
     בחינם . [Steam gifts](https://www.steamgifts.com/) – טוענים שהם מחלקים
     מפתחות למשחקים במנוע.
+
+</div>
+
