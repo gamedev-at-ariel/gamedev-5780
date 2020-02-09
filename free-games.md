@@ -23,6 +23,10 @@
 -   [Microsoft top free games](https://www.microsoft.com/en-us/store/top-free/games/pc?s=store&skipitems=90)
     – משחקים חינמיים לחלונות.
 
+-   [ITCH.IO](https://itch.io/) –
+פלטפורמה לפרסום משחקים של יוצרים עצמאיים. חלק גדול מהמשחקים בחינם. גם אתם תפרסמו שם את המשחק שלכם בסוף הקורס - בחינם או בתשלום.
+
+
 את אלה לא בדקתי:
 
 -   [Tabletopia](https://tabletopia.com/) –
