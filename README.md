@@ -1,6 +1,15 @@
-# gamedev-5780
-Game development course. Covers the basics of two fields:
+<div dir='rtl' lang='he'>
 
-* Game design in a play-centric approach;
-* Game programming using the Unity engine.
+# קורס פיתוח משחקי מחשב, אוניברסיטת אריאל, סמסטר ב ה'תש"ף 
 
+
+* [סילבוס בקובץ וורד](syllabus.docx)
+
+* [חוקי צבירת הנקודות בקורס](grade-rules.md)
+
+* [למי הקורס **לא** מתאים](disclaimer.md)
+
+* [איפה מוצאים משחקים בחינם](free-games.md)
+
+
+</div>
