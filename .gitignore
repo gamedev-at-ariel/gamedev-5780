@@ -97,4 +97,6 @@ $RECYCLE.BIN/
 IGDPD*.ppt
 
 
+# PyCharm
+.idea
 
