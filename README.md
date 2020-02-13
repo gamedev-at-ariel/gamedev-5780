@@ -10,7 +10,7 @@
 
 לפרטים ראו:
 
-* [בקובץ וורד](syllabus.docx) סילבוס  ו[בקובץ פדף](syllabus.pdf)
+* סילבוס  [בקובץ וורד](syllabus.docx)  ו[בקובץ פדף](syllabus.pdf)
 
 * [חוקי צבירת הנקודות בקורס](grade-rules.md)
 
