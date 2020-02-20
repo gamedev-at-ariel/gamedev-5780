@@ -1,0 +1,22 @@
+:root {
+    --red:#f00;
+    --green:#8f8;
+    --blue:#88f;
+}
+
+td {vertical-align: middle}
+
+.firstslide {  text-align:center; vertical-align: middle; font-size:larger; }
+
+h1 {  color: var(--green);  }
+h2 {  color: var(--blue);  }
+
+.red   { color: var(--red); }
+.green { color: var(--green); }
+.blue  { color: var(--blue); }
+.italic { text-style: italic; }
+
+
+
+ifram { border: none; }  /* An embedded video */
+iframe.quarter { height:250px;  width:500px; }  /* An embedded video that takes about a quarter of a slide. */
