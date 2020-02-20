@@ -18,5 +18,5 @@ h2 {  color: var(--blue);  }
 
 
 
-ifram { border: none; }  /* An embedded video */
+iframe { border: none; }  /* An embedded video */
 iframe.quarter { height:250px;  width:500px; }  /* An embedded video that takes about a quarter of a slide. */
