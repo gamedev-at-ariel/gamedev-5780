@@ -28,3 +28,11 @@ function handleClick(e) {
 
 window.addEventListener("mousedown", handleClick, false);
 window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
+
+
+/* For printing and PDF export */
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? '../revealjs/css/print/pdf.css' : '../revealjs/css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
