@@ -1,0 +1,399 @@
+<!doctype html>
+<html dir="rtl" lang="he">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>פיתוח משחקי מחשב - הרצאה 1</title>
+
+		<link rel="stylesheet" href="../revealjs/css/reset.css">
+		<link rel="stylesheet" href="../revealjs/css/reveal.css">
+		<link rel="stylesheet" href="../revealjs/css/theme/black.css">
+		<link rel="stylesheet" href="../utils/slides.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../revealjs/lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../revealjs/css/print/pdf.css' : '../revealjs/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<section class="firstslide">
+	<h1>פיתוח
+	<br/>
+		משחקי מחשב</h1>
+	<h2>הרצאה 1</h2>
+	<p>אראל סגל-הלוי</p>
+</section>
+
+<section>
+	<h1>מטרת הקורס</h1>
+	<h2>לעצב ולתכנת משחק מקורי*</h2>
+	<p class="fragment">*(לא שיבוט של משחק קיים)</p>
+	<h2 class="fragment">איך עושים את זה?</h2>
+</section>
+
+<section>
+	<h1>תהליך פיתוח משחק</h1>
+	<ol>
+		<li class="fragment">
+			<b>רעיון</b>:
+			 הגדרת חוויית השחקן
+<small>	(player experience).</small>
+
+			<div style="font-style:italic; margin-right:3em;">
+			בדיקה ע"י סיעור מוחות.
+			</div>
+		</li>
+
+		<li class="fragment">
+			<b>רכיבים</b>:
+			פורמליים, דרמטיים ודינמיים.
+
+			<div style="font-style:italic; margin-right:3em;">
+			בדיקה ע"י משחק-ניסוי
+				<small>	(playtest)</small>
+				בדגם מנייר.
+			</div>
+		</li>
+
+		<li class="fragment">
+			<b>פירוט</b>:
+			מצגת על אופן המשחק, ציורי-מסך.
+
+			<div style="font-style:italic; margin-right:3em;">
+			בדיקה ע"י משחק-ניסוי
+				<small>	(playtest)</small>
+				בדגם-תוכנה.
+			</div>
+		</li>
+
+		<li class="fragment">
+			<b>ייצור</b>
+			: קידוד מלא, אמנות, בקרת איכות.
+
+			<div style="font-style:italic; margin-right:3em;">
+בדיקות מקיפות ע"י קבוצות של שחקני ניסוי
+				<small>	(playtesters)</small>
+			</div>
+
+		</li>
+
+	</ol>
+
+</section>
+
+<section>
+	<h1>סוגי בדיקות</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>בדיקות יחידה</th>
+				<th>בדיקות משחק</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Unit-test</td>
+				<td>Play-test</td>
+			</tr>
+			<tr>
+				<td>המטרה: לוודא שאין באגים בקוד.</td>
+				<td>המטרה: לוודא שהמשחק משיג את חוויית השחקן הרצויה.</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
+
+<section>
+<h2>רעיונות - מאיפה הם באים?</h2>
+
+	<ol>
+		<li class="fragment red">עולם המשחקים – וריאציה על משחק קיים.
+		<ul>
+			<li>
+				היתרון: דורש פחות חשיבה יצירתית.
+			</li>
+			<li>
+				החיסרון: עלול להיות משעמם ולא מקורי.
+			</li>
+		</ul>
+		</li>
+
+		<li class="fragment green">העולם שמחוץ לעולם המשחקים:
+
+			<ul>
+				<li>
+חוויות מהחיים שלנו - מהילדות עד עכשיו;
+				</li>
+
+				<li>
+				סיפורים שקראנו, סרטים שראינו;
+				</li>
+
+				<li>
+מחקרים מדעיים או הסטוריים;
+				</li>
+
+				<li>
+					ערכים, דעות והשקפות.
+				</li>
+			</ul>
+		</li>
+	</ol>
+
+
+</section>
+
+
+<section>
+	<h2>רעיונות - חוויות ילדות</h2>
+
+	<section>
+		<table>
+		<tr class="fragment">
+			<td>
+				חוויית השחקן:
+				<br/>
+		גיבור ראשי בסיפור אגדה
+			</td>
+			<td>
+		<iframe class="quarter" src="https://www.youtube.com/embed/Pp2aMs38ERY?start=5" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+			<td>
+
+			</td>
+		</tr>
+
+		<tr class="fragment">
+			<td>
+חוויית השחקן:
+				<br/>
+		ילד מטייל, קופץ ואוסף חפצים
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/rLl9XBg7wSs?start=543" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/XnqGFn0Byg4?start=217" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+		</table>
+	</section>
+
+
+	<section>
+
+		<table>
+		<tr class="fragment">
+			<td>
+		<iframe class="quarter" src="https://www.youtube.com/embed/lKU3P7DVEG0?start=5" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+			<td>
+		<iframe class="quarter"  src="https://www.youtube.com/embed/dgFDWPSfkcw?start=780&end=810" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+
+		<tr class="fragment">
+			<td>
+				חוויית השחקן:
+				<br/>
+ילד מגלגל כדור ענק
+			</td>
+			<td>
+	<iframe class="quarter"  src="https://www.youtube.com/embed/PVVW41iAu5A?start=110" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+		</table>
+</section>
+
+</section>
+
+
+
+
+<section>
+	<h2>רעיונות - מדע טבע וחיים</h2>
+
+	<section>
+		<table>
+		<tr class="fragment">
+			<td>
+				חוויית השחקן:
+				<br/>
+שליטה בחיים של נמלה
+			</td>
+			<td>
+		<iframe class="quarter" src="https://www.youtube.com/embed/1ucLyqEboGM?start=5" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+
+		<tr class="fragment">
+			<td>
+חוויית השחקן:
+				<br/>
+		שליטה בחיים של אדם אחר
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/l9u1hHY-vUo?start=90" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+		</table>
+	</section>
+
+
+	<section>
+		<table>
+		<tr class="fragment">
+			<td>
+				חוויית השחקן:
+				<br/>
+תיכנות מעגל חשמלי בתוך רובוט
+			</td>
+			<td>
+		<iframe class="quarter" src="https://www.youtube.com/embed/vakjUVqjZSo?start=660" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+
+		<tr class="fragment">
+			<td>
+חוויית השחקן:
+				<br/>
+עיתונאי במהפכה באיראן
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/VQuFxIL9fZo?start=5" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+		</table>
+	</section>
+
+</section>
+
+
+<section>
+	<h2>רעיונות - ספרי קריאה</h2>
+
+		<section>
+		<table>
+		<tr class="fragment">
+			<td>
+				חוויית השחקן:
+				<br/>
+		 עליסה בארץ הפלאות
+			</td>
+			<td>
+		<iframe class="quarter" src="https://www.youtube.com/embed/6ff1gTH_6Cg?start=169" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+
+		<tr class="fragment">
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/RS5bikqHYWY?start=220" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/AxtvJXORH24?start=2000" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+		</table>
+		</section>
+
+		<section>
+		<table>
+		<tr class="fragment">
+			<td>
+				חוויית השחקן:
+				<br/>
+ארתור מ"מדריך הטרמפיסט לגלאקסיה"
+			</td>
+			<td>
+		<iframe class="quarter" src="https://www.youtube.com/embed/6-KsB5r46uA?start=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+
+		<tr class="fragment">
+			<td>
+חוויית השחקן:
+				<br/>
+ פספרטו מ"מסביב לעולם בשמונים יום".
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/Y2mj5rgYQ0Q?start=1000" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+		</table>
+	</section>
+</section>
+
+
+
+<section>
+	<h2>רעיונות - ערכים ומידות טובות</h2>
+
+		<section>
+		<table>
+		<tr class="fragment">
+			<td>
+				חוויית השחקן:
+				<br/>
+תיקון המידות תוך כדי משחק הרפתקאות
+			</td>
+			<td>
+		<iframe class="quarter" src="https://www.youtube.com/embed/gAd2UbcImck?start=5" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+
+		<tr class="fragment">
+			<td>
+				חוויית השחקן:
+				<br/>
+עץ ביערות הגשם
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/QLpDeZhObAs?start=5" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+		</table>
+		</section>
+</section>
+
+<section>
+	<h1>עכשיו תורכם..</h1>
+	<h2>מה תהיה חוויית השחקן במשחק שאתם תכתבו?</h2>
+	<ul>
+		<li>מהילדות?</li>
+		<li>מהחיים?</li>
+		<li>מספר שקראתם?</li>
+		<li>מהטבע?</li>
+		<li>מההסטוריה?</li>
+		<li>מהערכים החשובים לכם?</li>
+	</ul>
+</section>
+
+<section>
+	<h1>סיעור מוחות</h1>
+
+
+</section>
+
+</div>
+</div>
+
+
+<script src="../revealjs/js/reveal.js"></script>
+<script src="../utils/slides.js"></script>
+
+</body>
+</html>
