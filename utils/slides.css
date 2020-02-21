@@ -16,7 +16,21 @@ h2 {  color: var(--blue);  }
 .blue  { color: var(--blue); }
 .italic { text-style: italic; }
 
+/*
+.slide {
+    height: 800px;
+    overflow-y: auto !important;
+}
+*/
 
+/* See https://github.com/hakimel/reveal.js/issues/16
+   and  https://stackoverflow.com/questions/35237862/best-way-to-handle-overflowing-reveal-js-slide
+*/
+.scrollable {
+    width: 100%;
+    height: 600px;
+    overflow-y: auto !important;
+}
 
 iframe { border: none; }  /* An embedded video */
 iframe.quarter { height:250px;  width:500px; }  /* An embedded video that takes about a quarter of a slide. */
