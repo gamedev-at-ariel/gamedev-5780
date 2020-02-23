@@ -22,14 +22,13 @@ Reveal.initialize({
 
 function handleClick(e) {
     var c = e.target.className.toLowerCase();
+    //alert(c)
     if(c==="" || c.includes("background") || c.includes("blue") || c.includes("green") || c.includes("red") || c.includes("present") || c.includes("fragment")) {
         e.preventDefault();
         if(e.button === 0) Reveal.next();
         if(e.button === 2) Reveal.prev();
     }
-    else {
-        //alert(c)
-    }
+
 }
 
 window.addEventListener("mousedown", handleClick, false);
