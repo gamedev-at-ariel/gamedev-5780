@@ -16,6 +16,10 @@ h2 {  color: var(--blue);  }
 .blue  { color: var(--blue); }
 .italic { text-style: italic; }
 
+a.secret {color:black; font-size:small}
+a.secret:hover {color:yellow}
+
+
 /*
 .slide {
     height: 800px;

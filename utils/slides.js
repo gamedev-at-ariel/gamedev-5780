@@ -21,6 +21,9 @@ Reveal.initialize({
 /* https://www.raymondcamden.com/2012/10/20/Adding-mouse-click-navigation-to-revealjs */
 
 function handleClick(e) {
+    var tagname = e.target.tagName.toLowerCase();
+    if (tagname=="a") return;
+
     var c = e.target.className.toLowerCase();
     //alert(c)
     if(c==="" || c.includes("background") || c.includes("blue") || c.includes("green") || c.includes("red") || c.includes("present") || c.includes("fragment")) {
@@ -28,11 +31,10 @@ function handleClick(e) {
         if(e.button === 0) Reveal.next();
         if(e.button === 2) Reveal.prev();
     }
-
 }
 
 window.addEventListener("mousedown", handleClick, false);
-window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
+window.addEventListener("contextmenu", handleClick, false);
 
 
 /* For printing and PDF export */
