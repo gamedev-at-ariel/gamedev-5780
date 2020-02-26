@@ -1,0 +1,332 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>פיתוח משחקי מחשב - רכיבים דרמטיים</title>
+
+		<link rel="stylesheet" href="../revealjs/css/reset.css">
+		<link rel="stylesheet" href="../revealjs/css/reveal.css">
+		<link rel="stylesheet" href="../revealjs/css/theme/black.css">
+		<link rel="stylesheet" href="../revealjs/lib/css/monokai.css">		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="../utils/slides.css">
+	</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<section class="firstslide">
+	<h1>פיתוח
+	<br/>
+		משחקי מחשב</h1>
+	<h2> רכיבים דרמטיים </h2>
+	<p>אראל סגל-הלוי</p>
+</section>
+
+<section>
+<h1>רכיבים דרמטיים</h1>
+	<p>
+רכיבים הגורמים לשחקן להיות "מחובר" למשחק;
+להרגיש שהמשחק חשוב ומשמעותי עבורו.	</p>
+	<ol class="fragment">
+		<li>אתגר - challenge		</li>
+		<li>שעשוע - play		</li>
+		<li> רגשות - emotions		</li>
+		<li> סיפור רקע - premise		</li>
+		<li>דמויות - characters		</li>
+		<li>עלילה - plot		</li>
+		<li>בניית עולם - world-building		</li>
+	</ol>
+</section>
+
+<section>
+	<section>
+	<h1>אתגר</h1>
+	<img style="background:white; width:800px; height:500px" src="game-flow.png"/>
+	<p>
+	<small>
+	<a href="http://strangemoderncowboy.bancho.co.uk/game-flow-summarized/">מקור התרשים</a>
+	</small>
+	</p>
+	</section>
+
+	<section>
+		<h2>שאלות שיעזרו לנו ליצור אתגר</h2>
+		<ul class="fragment">
+			<li>מה ה<b>כישורים</b>
+				הדרושים כדי לשחק במשחק שלנו?			</li>
+			<li>איך אפשר
+				<b>לכוון</b>
+				את המשחק לרמות
+				קושי
+				שונות?
+				<a class="secret">(משתנים)</a>
+			</li>
+			<li>איך נוודא שהשחקן
+				<b>יודע</b>
+				מה הוא צריך לעשות?
+				<a class="secret">(הדרכה)</a>
+			</li>
+			<li>איך ניתן לשחקן
+				<b>משוב</b>
+				על הצלחה או כישלון?
+				<a class="secret">(מטלות ופתרונות, cutscenes)</a>
+			</li>
+			<li>איך ניתן לשחקן תחושה שהוא
+				<b>שולט</b>
+				במצב?
+				<a class="secret">(פקדים, צלילים)</a>
+			</li>
+			<li>איך נגרום לשחקן להיות
+				<b>מרוכז</b>
+				במשימה?
+				<a class="secret">(גרפיקה, מוסיקה)</a>
+			</li>
+		</ul>
+	</section>
+</section>
+
+<section>
+	<section>
+	<h1>שעשוע</h1>
+	<p>פעולות מהנות שאינן קשורות למטרת המשחק. לדוגמה:</p>
+
+		<table>
+		<tr>
+			<td>
+בנייה ועיצוב			</td>
+			<td>
+				גילוי וסיור
+			</td>
+		</tr>
+
+			<tr>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/SjRdEJ-TH3E?start=60" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/s0j-cHqf6Ms?start=60" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+
+		</table>
+
+	</section>
+	<section>
+	<p class="green">שחקנים שונים נהנים מסוגים שונים של פעילויות:</p>
+	<ul class="fragment">
+		<li>האמן: אוהב לעצב ולקשט.	</li>
+		<li>הסייר: רוצה לגלות את העולם.
+		</li>
+		<li>התחרותי: רוצה להיות יותר טוב מאחרים.
+		</li>
+		<li>האספן: אוהב לצבור ולארגן חפצים.	</li>
+		<li>ההישגי: אוהב להתקדם לרמות מאתגרות יותר.	</li>
+		<li>הליצן: אוהב לעשות שטויות.</li>
+		<li>הבמאי: אוהב להיות אחראי, לארגן מחזה.</li>
+		<li>המספר: אוהב ליצור סיפורים דמיוניים.</li>
+		<li>הצופה: אוהב לראות איך אנשים אחרים משחקים.</li>
+		<li>המציג: אוהב שאנשים אחרים רואים אותו משחק.</li>
+		<li>הבנאי: אוהב להנדס מבנים.</li>
+	</ul>
+	</section>
+
+	<section>
+
+	<h1>שעשוע - עוד דוגמאות</h1>
+
+		<table>
+		<tr>
+			<td>
+תחרות			</td>
+			<td>
+אספנות (של סיומים)
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+	<img class="quarter" src="HallOfFame.png"></img>
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/videoseries?list=PL243383BBCF878451" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+
+		</table>
+
+
+
+	</section>
+</section>
+
+<section>
+	<section>
+	<h1>יצירת רגשות</h1>
+				מלבד הרגשות ה"רגילים" של שמחה הנאה וניצחון,
+		אפשר גם ליצירת רגשות אחרים, למשל:
+	</section>
+	<section>
+		<table>
+		<tr>
+			<td>
+			שלוה
+			</td>
+			<td>צחוק					</td>
+		</tr>
+			<tr>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/RIfNvRWmOfk?start=120" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/iVWOZ8ctPE0?start=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+
+		<tr class="fragment">
+			<td>
+			חברות
+			</td>
+			<td>		אשמה			</td>
+		</tr>
+			<tr class="fragment">
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/3krjaWyn9pc?start=90" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/FfnBEBUgK04?start=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+		</table>
+	</section>
+
+</section>
+
+<section>
+	<h1>סיפור רקע</h1>
+	<ul>
+		<li>אירועים שקרו, כביכול, לפני המשחק.</li>
+		<li>נותנים משמעות לפעולות השחקן ולמטרת המשחק.</li>
+		<li>נותנים משמעות למספרים ולאלגוריתמים של המשחק.</li>
+	</ul>
+			<table>
+
+		<tr>
+			<td>
+				<a href="http://brenda.games/the-new-world">"העולם החדש"</a>
+			</td>
+			<td>Ultima 6</td>
+		</tr>
+			<tr>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/JiU7Ywl27YA?start=220" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/7nBWuV_E6Eg?start=10" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+		</table>
+</section>
+
+<section>
+	<section>
+	<h1>דמויות</h1>
+	<ul>
+		<li>גיבור (protagonist)  			או מתנגד (antagonist)</li>
+		<li class="fragment">ראשי או משני</li>
+		<li class="fragment">שטוח או עגול			</li>
+		<li class="fragment">קבוע או משתנה			</li>
+		<li class="fragment">נשלט ע"י השחקן או ע"י המחשב			</li>
+		<li class="fragment">עם או בלי רצון חופשי</li>
+	</ul>
+	</section>
+	<section>
+		<h2>דמויות - דוגמאות</h2>
+		<table>
+
+		<tr>
+			<td>Captain Goodnight -
+				מתעצבן כשהשחקן איטי מדי
+			</td>
+			<td>
+				Facade - עזור לחבריך להציל את הנישואין
+			</td>
+		</tr>
+			<tr>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/X2cxXpuILEc?start=10" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/RyaqHNdsqxw?start=150" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+
+		</table>
+	</section>
+
+</section>
+
+<section>
+<section>
+	<h1>עלילה - קשת דרמטית</h1>
+	<img style="background:white; width:800px; height:425px" src="dramatic-arc-Cinderella-Derek-Sivers.png"/>
+	<p>
+	<small>
+	<a href="https://www.nownovel.com/blog/understanding-storytelling-arc/">מקור התרשים</a>
+	</small>
+	</p>
+</section>
+
+<section>
+	<h2>קשת דרמטית במשחק יריות</h2>
+	<p><a href="https://www.udemy.com/course/unitycourse2/learn/lecture/8401196">
+		דוגמה מתוך קורס ב Udemy</a>
+	</p>
+	<img style="background:white; width:800px; height:400px" src="dramatic-arc-udemy-course.png"/>
+	</ul>
+</section>
+
+</section>
+
+<section>
+	<h1>בניית עולם</h1>
+	<ul>
+		<li>חוקי טבע</li>
+		<li>גיאוגרפיה</li>
+		<li>חיות וצמחים</li>
+		<li>הסטוריה</li>
+		<li>חברה ותרבות</li>
+		<li>ממשלה</li>
+		<li>כלכלה</li>
+		<li>... <a href="https://worldbuilding.stackexchange.com/?tab=month">
+		World Building StackExchange
+	</a></li>
+	</ul>
+</section>
+
+<section>
+<h2>סיכום</h2>
+	<p class="green">כמעצבי משחק, אנחנו יכולים להשתמש ברכיבים דרמטיים
+	לפי בחירתנו כדי "לחבר" את השחקן למשחק:</p>
+	<ol>
+		<li>אתגר - challenge		</li>
+		<li>שעשוע - play		</li>
+		<li> רקע - premise		</li>
+		<li>דמויות - characters		</li>
+		<li>עלילה - plot		</li>
+		<li>בניית עולם - world-building		</li>
+	</ol>
+</section>
+</div>
+</div>
+
+
+
+<script src="../revealjs/js/reveal.js"></script>
+<script src="../utils/slides.js"></script>
+
+</body>
+</html>
