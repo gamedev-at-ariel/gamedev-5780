@@ -1,0 +1,509 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>פיתוח משחקי מחשב - רכיבים דינמיים</title>
+
+		<link rel="stylesheet" href="../revealjs/css/reset.css">
+		<link rel="stylesheet" href="../revealjs/css/reveal.css">
+		<link rel="stylesheet" href="../revealjs/css/theme/black.css">
+		<link rel="stylesheet" href="../revealjs/lib/css/monokai.css">		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="../utils/slides.css">
+	</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<section class="firstslide">
+	<h1>פיתוח
+	<br/>
+		משחקי מחשב</h1>
+	<h2> רכיבים דינמיים </h2>
+	<p>אראל סגל-הלוי</p>
+</section>
+
+
+
+<!--section>
+<h1>רכיבים דינמיים</h1>
+	<img style="float:left; width:300px; background:white" src="inscribed-vs-dynamic-bond.png" />
+	<p>
+אנחנו, כמעצבי המשחק, אחראים ליצור
+		את הרכיבים
+		הפורמליים והדרמטיים.
+	</p>
+	<p class="fragment">
+		משחק הוא לא משחק עד שמישהו משחק בו.
+	</p>
+	<p class="fragment">
+		כשאנשים מתחילים לשחק במשחק שלנו,
+הוא הופך להיות
+		<em>
+		מערכת דינמית</em>.
+	</p>
+
+</section-->
+
+
+<section>
+<h1>רכיבים דינמיים</h1>
+	<p class="blue">
+הפרטים המחברים את רכיבי המשחק
+		והופכים אותם למערכת מתפקדת.
+	</p>
+	<ol class="fragment">
+		<li>עצמים - objects		</li>
+		<li>מאפיינים - properties		</li>
+		<li>התנהגויות - behaviors		</li>
+		<li> יחסים - relations		</li>
+	</ol>
+</section>
+
+
+<section>
+<h1>עצמים - דוגמאות</h1>
+	<section>
+		<div class="smallfloat">
+			<img src="Connect_Four.gif"/>
+			<a class="imagecredit" href="https://commons.wikimedia.org/w/index.php?curid=17635567">By Silver Spoon - Own work, CC BY-SA 3.0</a>
+		</div>
+	<p class="blue">דוגמה פשוטה: ארבע בשורה</p>
+	<ol>
+		<li  class="fragment">עצמים - לוח, עיגול		</li>
+		<li  class="fragment">מאפיינים - גודל, צבע, מיקום		</li>
+		<li  class="fragment">התנהגויות - אין		</li>
+		<li  class="fragment"> יחסים - 4 עיגולים ברצף יוצרים ניצחון		</li>
+	</ol>
+	</section>
+
+	<section>
+		<div class="smallfloat">
+			<img src="checkers.jpg"/>
+			<a class="imagecredit" href="https://ccsearch.creativecommons.org/photos/0bc3b57d-667b-49b2-9da2-932b4fd45590">מקור</a>
+
+
+			<!--img src="checkers.gif"/>
+			<a class="imagecredit" href="https://commons.wikimedia.org/w/index.php?curid=1237863">By User:Stephane8888 (Stephane8888 Wiktionnaire), CC BY-SA 2.5</a-->
+		</div>
+	<p class="blue">דוגמה פשוטה: דמקה</p>
+	<ol>
+		<li  class="fragment">עצמים - לוח, חייל פשוט, מלכה		</li>
+		<li  class="fragment">מאפיינים - גודל, צבע, מיקום, מהירות תנועה		</li>
+		<li  class="fragment">התנהגויות - תנועה		</li>
+		<li  class="fragment"> יחסים - "אכילה", הפיכה למלכה		</li>
+	</ol>
+	</section>
+	<section>
+		<!--div class="smallfloat">
+			<img src="wesnoth-logo.jpg"/>
+		</div-->
+	<iframe class="quarter smallfloat" src="https://www.youtube.com/embed/WqbMKDheneM?start=30" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<p class="blue">דוגמה מורכבת: Wesnoth</p>
+		<ol class="smaller fragment">
+			<li  class="fragment" >עצמים -
+			<a href="http://units.wesnoth.org/1.14/mainline/en_US/mainline.html">יחידות</a>,
+			<a href="https://wiki.wesnoth.org/TerrainCodeTableWML">משבצות</a>, ...
+			</li>
+			<li  class="fragment">מאפיינים - עלות, נקודות בריאות, נקודות ניסיון, נקודות תנועה, מספר התקפות, נזק בכל התקפה...		</li>
+			<li  class="fragment">התנהגויות - גיוס, תנועה, התקפה...		</li>
+			<li  class="fragment">יחסים - מהירות תנועה, עוצמת התקפה, ועוצמת הגנה של דמות,
+			משתנים בהתאם לסוג המשבצת, ועוד.</li>
+		</ol>
+	</section>
+</section>
+
+<section>
+<h1>אסטרטגיה</h1>
+	<p class="fragment">
+		אסטרטגיה היא תוכנית-פעולה שהשחקן משתמש בה
+		כדי לנצח במשחק.
+	</p>
+	<p class="fragment">
+		האסטרטגיה של השחקן אינה בשליטתנו.
+		אבל אנחנו יכולים להשפיע עליה.
+	</p>
+	<p class="fragment red">
+		ה<em>מאפיינים</em>
+		של העצמים משפיעים באופן משמעותי על האסטרטגיות שהשחקן יבחר.
+	</p>
+</section>
+
+
+<section>
+<h1>אסטרטגיה - דוגמאות</h1>
+	<section>
+	<p class="red">
+	</p>
+		<div class="smallfloat">
+			<img src="Connect_Four.gif"/>
+			<a class="imagecredit" href="https://commons.wikimedia.org/w/index.php?curid=17635567">By Silver Spoon - Own work, CC BY-SA 3.0</a>
+		</div>
+	<p class="blue">דוגמה פשוטה: ארבע בשורה. מה יקרה אם:</p>
+		<ol>
+			<li class="fragment">
+				נשנה את גודל השורה הדרוש לניצחון ל-5?
+			</li>
+			<li class="fragment">
+				נשנה את גודל השורה הדרוש לניצחון ל-3?
+			</li>
+			<li class="fragment">
+				נשנה את גודל הלוח ל-4 על 8?
+				<p class="fragment">-- המשחק נעשה פחות מעניין!</p>
+				<p class="fragment">-- כי העמודה האמצעית פחות חשובה.</p>
+			</li>
+		</ol>
+	</section>
+
+	<section>
+		<!--div class="smallfloat">
+			<img src="wesnoth-logo.jpg"/>
+		</div-->
+	<iframe class="quarter smallfloat" src="https://www.youtube.com/embed/WqbMKDheneM?start=30" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<p class="blue">דוגמה מורכבת: Wesnoth. מה יקרה אם תהיה:</p>
+		<ol>
+			<li class="fragment">
+				 יחידה שעולה כמו יחידה אחרת, אבל קצת יותר חלשה?
+			</li>
+			<li class="fragment">
+				 יחידה שעולה הרבה פחות מאחרת, וקצת יותר חלשה?
+			</li>
+			<li class="fragment">
+				איך קובעים את העלות ה"נכונה" של כל יחידה?
+				<br/>
+				<a class="smaller" href="https://forums.wesnoth.org/viewtopic.php?f=19&t=34782">Guide on designing standard factions</a>.
+			</li>
+		</ol>
+	</section>
+
+	<section>
+	<p class="blue">דוגמה לאיזון במשחק קלפים לשני שחקנים:
+	<a style="font-size:small" href="https://gdcvault.com/play/1023564/Math-for-Game-Programmers-Balancing">(Ian Schreiber)</a>
+	</p>
+	<ol>
+		<li>בכל קלף יש שלושה מספרים: עלות, חוזק ונזק.</li>
+		<li>כל שחקן מתחיל עם 10 זהב ושלושה קלפים מהקופה.</li>
+		<li>כל שחקן בוחר קלף; חושפים את שני הקלפים בו-זמנית.</li>
+		<li>כל שחקן משלם זהב בהתאם לעלות של הקלף שבחר.</li>
+		<li>אם החוזק של אחד הקלפים קטן יותר - הוא יוצא.</li>
+		<li>כל קלף שנשאר מוריד לשחקן השני זהב לפי הנזק שלו.</li>
+		<li>הראשון שהזהב שלו נגמר - מפסיד.</li>
+		<li>פירוט בקובץ אקסל.</li>
+	</ol>
+	</section>
+
+</section>
+
+
+<section>
+<h1>תופעות מתהוות</h1>
+	<section>
+	<p class="fragment blue">
+	כשאנחנו נותנים לכל עצם במערכת מספר קטן של
+		<em>התנהגויות</em>
+		פשוטות,
+		אנחנו עשויים לקבל תופעות מורכבות.
+	</p>
+	<div class="fragment">
+	<p>
+		דוגמה: "משחק" החיים.
+	</p>
+	<ol class="smaller fragment">
+		<li>עצמים: תאים על לוח אינסופי.</li>
+		<li>תכונה אחת בינארית: ריק או מלא.</li>
+		<li>התנהגויות:
+			<ul>
+				<li>לידה - תא ריק המוקף בשלושה תאים מלאים, נעשה  מלא.</li>
+				<li>בדידות - תא מלא המוקף בפחות משני תאים מלאים, נעשה ריק.</li>
+				<li>צפיפות - תא מלא המוקף ביותר משלושה תאים מלאים, נעשה ריק.</li>
+			</ul>
+		</li>
+	</ol>
+	</div>
+	</section>
+	<section>
+	<h2>
+		ב"משחק" החיים:
+	</h2>
+
+		<table>
+		<tr>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/ouipbDkwHWA?start=330" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/xP5-iIeKXE8?start=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+
+		</table>
+	</section>
+
+	<section>
+		<h2>במשחקים אמיתיים:</h2>
+
+		<table>
+			<tr>
+				<td>Pikmin -
+				<a href="https://www.wired.com/2002/03/aigames/">
+					הליכה אחרי השחקן.
+				</a>
+				</td>
+				<td>Halo -
+				<a href="https://electronics.howstuffworks.com/halo2-ai.htm">
+					חושים, זיכרון, רגש.
+				</a>
+				</td>
+			</tr>
+		<tr>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/pQiUm0Vnfl8?start=1020" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/nxOkgWihmRw?start=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+		</tr>
+
+		</table>
+
+	</section>
+</section>
+
+
+
+<section>
+<h1>רכיבים כלכליים</h1>
+	<p class="blue">
+רכיבים הקשורים למסחר במשאבים בעולם המשחק:
+	</p>
+	<ol class="fragment">
+		<li>מה וכמה פריטים ניתנים למסחר?</li>
+		<li>מי יכול לסחור?</li>
+		<li>באיזה אופן מתבצע המסחר?</li>
+		<li>איך נקבע המחיר?</li>
+	</ol>
+</section>
+
+
+<section>
+<h1>כלכלה - דוגמאות</h1>
+	<section>
+	<iframe class="quarter smallfloat" src="https://www.youtube.com/embed/OFht7Lnp1Ko?start=30" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h2>הבור - Pit</h2>
+	<ol class="fragment">
+		<li>פריטים סחירים - קלפים המייצגים 8 סחורות, 9 מכל סוג.</li>
+		<li>הסוחרים הם השחקנים.</li>
+		<li>מותר לסחור תמיד - אין תורות.</li>
+		<li>המחיר קבוע - מספר הקלפים בעסקה צריך להיות זהה.</li>
+	</ol>
+	</section>
+
+	<section>
+	<iframe class="quarter smallfloat" src="https://www.youtube.com/embed/cPhX_1RiwEg?start=177" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h2>מתיישבי קאטאן</h2>
+	<ol class="fragment">
+		<li>פריטים סחירים - קלפי סחורות, כמות גדלה בהדרגה.</li>
+		<li>הסוחרים הם השחקנים והבנק.</li>
+		<li>שחקן רשאי לסחור רק בתורו.</li>
+		<li>המחיר חופשי, אבל הבנק נותן מחיר קבוע 1:4.</li>
+	</ol>
+	</section>
+
+	<section>
+	<iframe class="quarter smallfloat" src="https://www.youtube.com/embed/3G13y-R6CU4?start=600" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h2>מונופול</h2>
+	<ol class="fragment">
+		<li>פריטים סחירים - ערים, בניינים, כסף.</li>
+		<li>הסוחרים הם השחקנים והבנק.</li>
+		<li>מותר לסחור מתי שרוצים.</li>
+		<li>מחיר התחלתי קבוע, אחר-כך שוק חופשי.</li>
+	</ol>
+	</section>
+
+
+	<section>
+	<iframe class="quarter smallfloat" src="https://www.youtube.com/embed/3rolrwqkNsk?start=10" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<h2>EverQuest</h2>
+	<ol class="fragment">
+		<li>פריטים סחירים - הכל.</li>
+		<li>הסוחרים הם השחקנים, ודמויות שאינן שחקנים (NPC).</li>
+		<li>מותר לסחור מתי שרוצים - גם מחוץ למשחק.</li>
+		<li>מחיר חופשי, אבל ה-NPC נותנים מחירי בסיס.</li>
+		<li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=294828">
+			שכר לשעה - 3.4 דולר.
+			תמ"ג לנפש - בין בולגריה לרוסיה.
+		</a></li>
+	</ol>
+	</section>
+
+	<section>
+	<h2>כלכלת משחקים בימינו</h2>
+	<ul class="fragment">
+		<li><a href="https://insider.geektime.co.il/organizations/playtika/jobs/game-economy-20fb62c4af73">הצעות עבודה - כלכלן משחק</a></li>
+		<li>
+			<a href="https://blog.hoard.exchange/diablo-iiis-failed-auction-house-why-true-ownership-won-t-save-your-game-c6d692b9de1">
+			מכרזים בדיאבלו 3, ואיך הם כמעט הרסו את המשחק
+			</a>
+		</li>
+		<li>
+			<a href="https://hackernoon.com/how-to-build-a-robust-game-economy-lessons-from-one-of-the-worlds-longest-running-mmos-426f8fd94f6d">
+			שיעורים בבניית כלכלת משחק -
+				ע"פ המשחק
+				Eve Online
+			</a>
+		</li>
+	</ul>
+	</section>
+</section>
+
+
+
+
+<section>
+<h1>רכיבי תקשורת</h1>
+	<p class="blue">
+רכיבים המגדירים את אופי התקשורת בין השחקן לבין המשחק:
+	</p>
+	<ol class="fragment">
+		<li>
+			כמה
+			<b>מידע</b>
+			מקבל השחקן על מצב המערכת?
+		</li>
+		<li>
+			מה מידת ה<b>שליטה</b>
+			של השחקן על מצב המערכת?
+		</li>
+		<li>
+			מה אופי ה<b>משוב</b>
+			במשחק - איך המשחק משתנה בהתאם לפעולות השחקן?
+		</li>
+	</ol>
+</section>
+
+
+
+<section>
+	<h1>מידע</h1>
+	<h2>מערכת &larr; שחקן </h2>
+
+	<section>
+	<table>
+		<tr>
+			<td>
+				מידע מלא
+			</td>
+			<td>
+				מידע חלקי
+			</td>
+		</tr>
+	<tr>
+		<td>
+<img class="quarter" src="chess.jpg"/>
+		</td>
+		<td>
+<img class="quarter" src="poker.jpg"/>
+		</td>
+	</tr>
+	</table>
+	</section>
+
+	<section>
+	<table>
+		<tr>
+			<td>
+				מידע מלא
+			</td>
+			<td>
+				מידע חלקי
+			</td>
+		</tr>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/ninRkHZ7WOg?start=20" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+			<td>
+	<iframe class="quarter" src="https://www.youtube.com/embed/lvFDMNXBatM?start=10" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</td>
+	</table>
+	</section>
+</section>
+
+
+<section>
+	<h1>שליטה</h1>
+	<h2>שחקן&larr; מערכת </h2>
+	דוגמאות לשליטה עקיפה:
+	<table>
+		<tr>
+			<td>
+			שליטה בחלק מהדמויות
+			</td>
+			<td>
+			שליטה בסביבה בלבד
+			</td>
+		</tr>
+	<tr>
+		<td>
+<iframe class="quarter" src="https://www.youtube.com/embed/xIuxB1oR2WQ?start=105" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</td>
+		<td>
+<iframe class="quarter" src="https://www.youtube.com/embed/yGsRAhGBChA?start=1470" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</td>
+	</tr>
+	</table>
+</section>
+
+
+
+<!--section>
+	<h1>לולאת משוב</h1>
+
+	<table>
+		<tr>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
+	<tr>
+		<td>
+<iframe class="quarter" src="https://www.youtube.com/embed/pQiUm0Vnfl8?start=1020" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</td>
+		<td>
+<iframe class="quarter" src="https://www.youtube.com/embed/nxOkgWihmRw?start=1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</td>
+	</tr>
+	</table>
+</section-->
+
+
+<section>
+<h2>סיכום</h2>
+	<p class="green">כמעצבי משחק,
+		ננסה לחשוב צעד אחד קדימה ולחזות את ההשלכות הדינמיות של הבחירות שלנו:
+	</p>
+	<ol class="fragment">
+		<li>המאפיינים המספריים של העצמים במשחק, וההשפעה שלהם על האסטרטגיות של השחקנים;</li>
+		<li>ההתנהגויות של העצמים במשחק, והאופן שבו הן יוצרות תופעות מורכבות;</li>
+		<li>הכלכלה בעולם המשחק, והאופן שבו היא קשורה לכלכלה בעולם האמיתי;</li>
+		<li>כמות המידע שהמערכת נותנת לשחקן על מצב המשחק;</li>
+		<li>אופן השליטה של השחקן במערכת המשחק.</li>
+	</ol>
+</section>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+
+<script src="../revealjs/js/reveal.js"></script>
+<script src="../utils/slides.js"></script>
+
+</body>
+</html>

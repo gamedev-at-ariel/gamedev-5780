@@ -22,7 +22,7 @@ Reveal.initialize({
 
 function handleClick(e) {
     var tagname = e.target.tagName.toLowerCase();
-    if (tagname=="a") return;
+    if (tagname=="a" || tagname=="img") return;
 
     var c = e.target.className.toLowerCase();
     //alert(c)

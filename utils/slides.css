@@ -19,6 +19,13 @@ h2 {  color: var(--blue);  }
 a.secret {color:black; font-size:small}
 a.secret:hover {color:yellow}
 
+.smallfloat {float:left; width:200px}
+.largefloat {float:left; width:250px}
+
+.smaller {font-size:smaller}
+.small {font-size:small}
+
+.imagecredit {font-size:small}
 
 /*
 .slide {
