@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>פיתוח משחקי מחשב - מנוע יוניטי</title>
+
+		<link rel="stylesheet" href="../revealjs/css/reset.css">
+		<link rel="stylesheet" href="../revealjs/css/reveal.css">
+		<link rel="stylesheet" href="../revealjs/css/theme/black.css">
+		<link rel="stylesheet" href="../revealjs/lib/css/monokai.css">		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="../utils/slides.css">
+	</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<section class="firstslide">
+	<h1>פיתוח
+	<br/>
+		משחקי מחשב</h1>
+	<h2> מנוע יוניטי </h2>
+	<p>אראל סגל-הלוי</p>
+</section>
+
+
+
+
+<section>
+<h1>מנוע משחק</h1>
+	<p class="blue">
+מנוע לפיתוח משחקי מחשב (Game Development Engine) כולל בדרך-כלל:
+	</p>
+	<ol class="fragment">
+		<li>מערכת לניהול של עצמים, מאפיינים, התנהגויות ויחסים.</li>
+		<li>מנוע גרפי לתצוגה דו-ממדית ותלת-ממדית.</li>
+		<li>מנוע פיסיקלי לחישוב כוחות והתנגשויות.</li>
+		<li>מנוע קול לניגון קבצי שמע.</li>
+		<li>מנוע סקריפטים ליישום לוגיקת משחק.</li>
+		<li>מנוע אנימציה.</li>
+		<li>התאמה לפלטפורמות שונות.</li>
+	</ol>
+</section>
+
+
+
+<section>
+<h1>השוואת מנועים</h1>
+	<p class="blue">
+	יש עשרות מנועי-משחקים שונים.
+	הנפוצים ביותר הם:
+	</p>
+	<table>
+		<thead>
+		<col />
+		<col />
+		<col/>
+		<col />
+		<col />
+		<col />
+		</thead>
+		<tbody>
+		<tr>
+			<th></th>
+			<th>שפה</th>
+			<th>רשיון</th>
+			<th>קוד</th>
+			<th>Steam</th>
+			<th>Itch.io</th>
+		</tr>
+
+		<tr style="background:#008">
+			<th>Unity</th>
+			<td>C#</td>
+			<td style="font-size:32px" >חינם אם מרויחים פחות מ-100,000 $</td>
+			<td>סגור</td>
+			<td>889 (#2)</td>
+			<td>24200 (#1)</td>
+		</tr>
+
+		<tr style="background:#080">
+			<th>Unreal</th>
+			<td>C++</td>
+			<td style="font-size:32px" >5% מהרווחים.</td>
+			<td>גלוי</td>
+			<td>1726 (#1)</td>
+			<td>1458 (#8)</td>
+		</tr>
+
+		<!--tr style="background:#008">
+			<th>Godot</th>
+			<td>Python-like/td>
+			<td style="font-size:smaller" >קוד פתוח לחלוטין.</td>
+			<td>889</td>
+			<td>24200</td>
+		</tr -->
+		</tbody>
+	</table>
+<a class="small" href="https://www.gamasutra.com/blogs/MarcusToftedahl/20190930/350830/Which_are_the_most_commonly_used_Game_Engines.php">מקור המידע</a>
+</section>
+
+
+
+<section>
+<h2>יוניטי - מושגי יסוד</h2>
+	<ol>
+		<li>העורך הראשי</li>
+		<li>עצם-משחק - GameObject</li>
+		<li>רכיב - Component</li>
+		<li>רכיב מיקום - Transform</li>
+		<li>רכיב תצוגה - Renderer</li>
+		<li>סקריפטים ב C#</li>
+		<li>גיטהאב</li>
+		<li>בנית המשחק - build</li>
+	</ol>
+</section>
+
+
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+
+<script src="../revealjs/js/reveal.js"></script>
+<script src="../utils/slides.js"></script>
+
+</body>
+</html>
