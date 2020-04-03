@@ -117,24 +117,39 @@
 </section>
 
 <section>
-<h1>אסטרטגיה</h1>
-	<p class="fragment">
+<h1>מאפיינים</h1>
+<p class="red fragment">איך קובעים את הערכים המספריים של המאפיינים?</p>
+
+	<ul>
+	<li class="blue fragment">מאפיינים משפיעים על
+	<b>הבחירות</b>
+		<b>והאסטרטגיות</b>
+	שהשחקנים מבצעים במהלך המשחק.
+	</li>
+
+	<li class="fragment">
+		השאיפה שלנו כמעצבים היא, לקבוע מאפיינים
+		שיגרמו לשחקנים לבחור בחירות מעניינות.
+	</li>
+	<li class="fragment">
 		אסטרטגיה היא תוכנית-פעולה שהשחקן משתמש בה
 		כדי לנצח במשחק.
-	</p>
-	<p class="fragment">
-		האסטרטגיה של השחקן אינה בשליטתנו.
-		אבל אנחנו יכולים להשפיע עליה.
-	</p>
-	<p class="fragment red">
-		ה<em>מאפיינים</em>
-		של העצמים משפיעים באופן משמעותי על האסטרטגיות שהשחקן יבחר.
-	</p>
+	</li>
+	<li class="fragment">
+		האסטרטגיה של השחקן אינה בשליטתנו,
+		אבל אנחנו יכולים להשפיע עליה ע"י קביעה נכונה של המאפיינים.
+	</li>
+	</ul>
+
+
 </section>
 
-
 <section>
-<h1>אסטרטגיה - דוגמאות</h1>
+<h1>מאפיינים ואסטרטגיה</h1>
+	<p>
+		המאפיינים של העצמים משפיעים באופן משמעותי על האסטרטגיות שהשחקן ישתמש בהן.
+	</p>
+
 	<section>
 	<p class="red">
 	</p>
@@ -142,22 +157,15 @@
 			<img src="Connect_Four.gif"/>
 			<a class="imagecredit" href="https://commons.wikimedia.org/w/index.php?curid=17635567">By Silver Spoon - Own work, CC BY-SA 3.0</a>
 		</div>
-	<p class="blue">דוגמה פשוטה: ארבע בשורה. מה יקרה אם:</p>
-		<ol>
-			<li class="fragment">
-				נשנה את גודל השורה הדרוש לניצחון ל-5?
-			</li>
-			<li class="fragment">
-				נשנה את גודל השורה הדרוש לניצחון ל-3?
-			</li>
-			<li class="fragment">
-				נשנה את גודל הלוח ל-4 על 8?
-				<p class="fragment">-- המשחק נעשה פחות מעניין!</p>
-				<p class="fragment">-- כי העמודה האמצעית פחות חשובה.</p>
-			</li>
-		</ol>
+	<p class="blue">דוגמה פשוטה: ארבע בשורה. מה יקרה אם
+					נשנה את מספר העמודות מ-7 ל-8?</p>
+	<p class="fragment">-- המשחק נעשה פחות מעניין!</p>
+	<p class="fragment">-- כי העמודה האמצעית פחות חשובה.</p>
 	</section>
+</section>
 
+<section>
+<h1>מאפיינים ובחירות</h1>
 	<section>
 		<!--div class="smallfloat">
 			<img src="wesnoth-logo.jpg"/>
@@ -180,16 +188,18 @@
 	</section>
 
 	<section>
-	<p class="blue">דוגמה לאיזון במשחק קלפים לשני שחקנים:
+	<p class="blue">
+		<b>דגם מנייר</b>
+		של היבט אחד של משחק דמוי-וסנות':
 	<a style="font-size:small" href="https://gdcvault.com/play/1023564/Math-for-Game-Programmers-Balancing">(Ian Schreiber)</a>
 	</p>
 	<ol>
 		<li>בכל קלף יש שלושה מספרים: עלות, חוזק ונזק.</li>
 		<li>כל שחקן מתחיל עם 10 זהב ושלושה קלפים מהקופה.</li>
 		<li>כל שחקן בוחר קלף; חושפים את שני הקלפים בו-זמנית.</li>
-		<li>כל שחקן משלם זהב בהתאם לעלות של הקלף שבחר.</li>
+		<li>כל שחקן משלם לקופה את עלות הקלף שבחר (בזהב).</li>
 		<li>אם החוזק של אחד הקלפים קטן יותר - הוא יוצא.</li>
-		<li>כל קלף שנשאר מוריד לשחקן השני זהב לפי הנזק שלו.</li>
+		<li>כל קלף שנשאר, מוריד לשחקן השני זהב לפי הנזק שלו.</li>
 		<li>הראשון שהזהב שלו נגמר - מפסיד.</li>
 		<li>המשך בגיליון אקסל.</li>
 	</ol>
@@ -212,13 +222,14 @@
 
 
 <section>
-<h1>תופעות מתהוות</h1>
+<h1>התנהגויות</h1>
 	<section>
 	<p class="fragment blue">
 	כשאנחנו נותנים לכל עצם במערכת מספר קטן של
-		<em>התנהגויות</em>
+		התנהגויות
 		פשוטות,
-		אנחנו עשויים לקבל תופעות מורכבות.
+		אנחנו עשויים לקבל תופעות מורכבות -
+		<b>תופעות מתהוות</b>.
 	</p>
 	<div class="fragment">
 	<p>
@@ -239,7 +250,7 @@
 	</section>
 	<section>
 	<h2>
-		ב"משחק" החיים:
+		תופעות מתהוות ב"משחק" החיים:
 	</h2>
 
 		<table>
@@ -256,7 +267,7 @@
 	</section>
 
 	<section>
-		<h2>במשחקים אמיתיים:</h2>
+		<h2>תופעות מתהוות במשחקי מחשב:</h2>
 
 		<table>
 			<tr>
@@ -449,6 +460,7 @@
 	<h1>שליטה</h1>
 	<h2>שחקן&larr; מערכת </h2>
 	דוגמאות לשליטה עקיפה:
+	<section>
 	<table>
 		<tr>
 			<td>
@@ -467,6 +479,29 @@
 		</td>
 	</tr>
 	</table>
+	</section>
+
+	<section>
+	<table>
+		<tr>
+			<td>
+			שליטה בחלק מהדמויות
+			</td>
+			<td>
+			שליטה בסביבה בלבד
+			</td>
+		</tr>
+	<tr>
+		<td>
+<iframe class="quarter" src="https://www.youtube.com/embed/1EM__R9FrU4?start=115" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</td>
+		<td>
+<iframe class="quarter" src="https://www.youtube.com/embed/yyvUYVjNXj8?start=210" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</td>
+	</tr>
+	</table>
+	</section>
+
 </section>
 
 
