@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		<title>פיתוח משחקי מחשב - יוניטי - דגמים והתנגשויות</title>
+		<title>פיתוח משחקי מחשב - יוניטי - יחסים בין עצמים</title>
 
 		<link rel="stylesheet" href="../revealjs/css/reset.css" />
 		<link rel="stylesheet" href="../revealjs/css/reveal.css" />
@@ -22,43 +22,98 @@
 	<h1>פיתוח
 	<br/>
 		משחקי מחשב</h1>
-	<h2> מנוע יוניטי - דגמים והתנגשויות</h2>
+	<h2> מנוע יוניטי - יחסים בין עצמים</h2>
 	<p>אראל סגל-הלוי</p>
 </section>
 
+<section>
+	<h1>יחסים בין עצמים</h1>
+	<h2>נושאים ללימוד:</h2>
+	<ul>
+	<li>דגמים - Prefabs</li>
+	<li>התנגשויות - Collisions</li>
+	</ul>
+	<h2>משחקים להדגמה:</h2>
+	<ul>
+		<li>חלליות ב-2 ממדים</li>
+		<li>פלטפורמה ב-2.5 ממדים</li>
+	</ul>
+</section>
 
 
 
 <section>
-<h2>יוניטי - פרטים טכניים</h2>
+	<h1>דגמים - Prefabs</h1>
+	<p class="blue">
+		Prefab = pre-fabricated =
+		דגם מוכן מראש של עצם-משחק, המאפשר לייצר עותקים רבים של אותו עצם.
+	</p>
 	<ol>
-		<li><a href="https://assetstore.unity.com/">חנות נכסים - Asset Store</a></li>
+		<li>יצירת דגם ע"י גרירה מההיררכיה</li>
+		<li>יצירת עותק ע"י גרירה לסצינה</li>
+		<li>Override - החלפת מאפיין של דגם באחד העותקים</li>
+		<li>שינוי מאפיין בדגם משנה את כל העותקים שלא הוחלפו</li>
+		<li>Apply - העתקת מאפיין מעותק אחד אל הדגם</li>
+		<li>Instantiate - יצירת עותק מתוך הקוד</li>
+		<li>קניית דגמים ב<a href="https://assetstore.unity.com/packages/2d/characters/2d-animated-spaceships-96852/">חנות נכסים - Asset Store</a></li>
 	</ol>
 </section>
 
 
 <section>
-<h2>יוניטי - יחסים בין עצמים</h2>
+<h1>התנגשויות</h1>
+	<p class="blue">
+		"התנגשות" ביוניטי =
+		חפיפה מרחבית בין עצמים.
+	</p>
+	<h2>הרכיבים הדרושים:</h2>
 	<ol>
-		<li>דגם - Prefab
-		<ul>
-		<li>יצירת עצם מתוך דגם - Instantiate</li>
-		</ul>
-		</li>
-		<li>התנגשות - Collision
-		<ul>
-		<li>רכיב מתנגש - Collider</li>
-		<li>גוף קשיח - RigidBody</li>
-		<li>תגיות - Tags</li>
-		</ul>
-		</li>
-		<li>פעולות מתוזמנות - CoRoutines</li>
-		<li>ירושה ושיפורים ב C#</li>
+		<li>Collider - מגדיר את המקום שהעצם תופס במרחב.</li>
+		<li>RigidBody - מגדיר את התנועה של הגוף במרחב.</li>
 	</ol>
 </section>
 
 
+
 <section>
+<h2>סוגי התנגשויות</h2>
+	<table>
+		<tr>
+			<th></th>
+			<th style="border-left:solid 1pt white; border-right:solid 1pt white">שני ממדים</th>
+			<th>שלושה ממדים</th>
+		</tr>
+		<tr>
+			<th>בלי פיסיקה</th>
+			<td style="text-align:left; font-size:smaller; border-left:solid 1pt white; border-right:solid 1pt white">
+				<div class="red">Collider2D[Trigger]</div>
+				<div class="red">RigidBody2D[Kinematic]</div>
+				<div class="green">Trigger2D Event</div>
+			</td>
+			<td style="text-align:left; font-size:smaller">
+				<div class="red">Collider[Trigger]</div>
+				<div class="red">RigidBody[Kinematic]</div>
+				<div class="green">Trigger Event</div>
+			</td>
+		</tr>
+		<tr>
+			<th>עם פיסיקה</th>
+			<td style="text-align:left; font-size:smaller; border-left:solid 1pt white; border-right:solid 1pt white">
+				<div class="red">Collider2D</div>
+				<div class="red">RigidBody2D[Dynamic]</div>
+				<div class="green">Collision2D Event</div>
+			</td>
+			<td style="text-align:left; font-size:smaller">
+				<div class="red">Collider</div>
+				<div class="red">RigidBody[Dynamic]</div>
+				<div class="green">Collision Event</div>
+			</td>
+		</tr>
+	</table>
+</section>
+
+
+<!--section>
 	<h1>התנגשויות</h1>
 	<section>
 	<h2>סוגי גופים קשיחים - RigidBody</h2>
@@ -113,10 +168,12 @@
 <section>
 <h2>חלליות - רכיבים משחקיים</h2>
 <ul>
-	<li>טיל - Missile</li>
 	<li>נקודות בריאות - Health</li>
 	<li>יצרן - Spawner</li>
 	<li>שיפורים - Powerups</li>
+	<li>תגיות - Tags</li>
+	<li>פעולות מתוזמנות - CoRoutines</li>
+	<li>ירושה ושיפורים ב C#</li>
 </ul>
 
 
@@ -164,7 +221,7 @@
 		<li>טוען הסצינות - SceneManager</li>
 		<li>שמירת מידע בין סצינות - דגם סינגלטון</li>
 	</ul>
-</section>
+</section-->
 
 
 
