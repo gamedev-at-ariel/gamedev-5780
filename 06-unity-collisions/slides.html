@@ -36,7 +36,7 @@
 	<h2>משחקים להדגמה:</h2>
 	<ul>
 		<li>חלליות ב-2 ממדים</li>
-		<li>פלטפורמה ב-2.5 ממדים</li>
+		<!--li>פלטפורמה ב-2.5 ממדים</li--->
 	</ul>
 </section>
 
@@ -61,56 +61,81 @@
 
 
 <section>
-<h1>התנגשויות</h1>
-	<p class="blue">
-		"התנגשות" ביוניטי =
-		חפיפה מרחבית בין עצמים.
-	</p>
-	<h2>הרכיבים הדרושים:</h2>
-	<ol>
-		<li>Collider - מגדיר את המקום שהעצם תופס במרחב.</li>
-		<li>RigidBody - מגדיר את התנועה של הגוף במרחב.</li>
-	</ol>
+	<section>
+		<h1>התנגשויות</h1>
+			<p>
+				"התנגשות" ביוניטי =
+				חפיפה מרחבית בין עצמים.
+			</p>
+			<h2>הרכיבים הדרושים:</h2>
+			<ol>
+				<li>Collider - מגדיר את המקום שהעצם תופס במרחב.</li>
+				<li>RigidBody - מגדיר את התנועה של הגוף במרחב.</li>
+			</ol>
+	</section>
+
+	<section>
+	<h2>סוגי התנגשויות</h2>
+		<table>
+			<tr>
+				<th></th>
+				<th style="border-left:solid 1pt white; border-right:solid 1pt white">שני ממדים</th>
+				<th>שלושה ממדים</th>
+			</tr>
+			<tr>
+				<th>בלי פיסיקה</th>
+				<td style="text-align:left; font-size:smaller; border-left:solid 1pt white; border-right:solid 1pt white">
+					<div class="red">Collider2D[Trigger]</div>
+					<div class="red">RigidBody2D[Kinematic]</div>
+					<div class="green">Trigger2D Event</div>
+				</td>
+				<td style="text-align:left; font-size:smaller">
+					<div class="red">Collider[Trigger]</div>
+					<div class="red">RigidBody[Kinematic]</div>
+					<div class="green">Trigger Event</div>
+				</td>
+			</tr>
+			<tr>
+				<th>עם פיסיקה</th>
+				<td style="text-align:left; font-size:smaller; border-left:solid 1pt white; border-right:solid 1pt white">
+					<div class="red">Collider2D</div>
+					<div class="red">RigidBody2D[Dynamic]</div>
+					<div class="green">Collision2D Event</div>
+				</td>
+				<td style="text-align:left; font-size:smaller">
+					<div class="red">Collider</div>
+					<div class="red">RigidBody[Dynamic]</div>
+					<div class="green">Collision Event</div>
+				</td>
+			</tr>
+		</table>
+		<a class="smaller" href="https://docs.unity3d.com/Manual/CollidersOverview.html">טבלה מפורטת באתר יוניטי</a>
+	</section>
+
+	<section>
+		<h2>טריגרים במשחק חלליות</h2>
+		<ol>
+			<li>השמדת השחקן כשהוא פוגע באויב</li>
+			<li>השמדת האויב כשפוגע בו לייזר</li>
+			<li>הוספת ניקוד לשחקן כשלייזר פוגע באויב</li>
+			<li>לקיחת מגינים</li>
+			<li>רעיונות נוספים במטלה</li>
+		</ol>
+	</section>
 </section>
 
 
 
 <section>
-<h2>סוגי התנגשויות</h2>
-	<table>
-		<tr>
-			<th></th>
-			<th style="border-left:solid 1pt white; border-right:solid 1pt white">שני ממדים</th>
-			<th>שלושה ממדים</th>
-		</tr>
-		<tr>
-			<th>בלי פיסיקה</th>
-			<td style="text-align:left; font-size:smaller; border-left:solid 1pt white; border-right:solid 1pt white">
-				<div class="red">Collider2D[Trigger]</div>
-				<div class="red">RigidBody2D[Kinematic]</div>
-				<div class="green">Trigger2D Event</div>
-			</td>
-			<td style="text-align:left; font-size:smaller">
-				<div class="red">Collider[Trigger]</div>
-				<div class="red">RigidBody[Kinematic]</div>
-				<div class="green">Trigger Event</div>
-			</td>
-		</tr>
-		<tr>
-			<th>עם פיסיקה</th>
-			<td style="text-align:left; font-size:smaller; border-left:solid 1pt white; border-right:solid 1pt white">
-				<div class="red">Collider2D</div>
-				<div class="red">RigidBody2D[Dynamic]</div>
-				<div class="green">Collision2D Event</div>
-			</td>
-			<td style="text-align:left; font-size:smaller">
-				<div class="red">Collider</div>
-				<div class="red">RigidBody[Dynamic]</div>
-				<div class="green">Collision Event</div>
-			</td>
-		</tr>
-	</table>
-</section>
+<h2>מושגים שלמדנו היום</h2>
+<ul>
+	<li>Prefab - דגם</li>
+	<li>Collision/Trigger - התנגשות</li>
+	<li>תגיות - Tags</li>
+	<li>פעולות מתוזמנות - CoRoutines</li>
+	<li>ירושה ב C#</li>
+</ul>
+
 
 
 <!--section>
@@ -165,62 +190,6 @@
 </section>
 
 
-<section>
-<h2>חלליות - רכיבים משחקיים</h2>
-<ul>
-	<li>נקודות בריאות - Health</li>
-	<li>יצרן - Spawner</li>
-	<li>שיפורים - Powerups</li>
-	<li>תגיות - Tags</li>
-	<li>פעולות מתוזמנות - CoRoutines</li>
-	<li>ירושה ושיפורים ב C#</li>
-</ul>
-
-
-</section>
-
-<section>
-<h1>רכיבים אמנותיים</h1>
-	<section>
-		<h2>הנפשה - Animation</h2>
-	<ul>
-		<li>מאפיינים - Properties</li>
-		<li>רגעי מפתח - Key</li>
-		<li>בקר הנפשה - Animator</li>
-		<li>הנפשת דמויות - Sprite Animation</li>
-		<li>תנאי מעבר מצב - Transition Condition</li>
-		<li>אירועים - Events</li>
-	</ul>
-	</section>
-
-	<section>
-		<h2>שמע - Audio</h2>
-	<ul>
-		<li>מקור קול - AudioSource</li>
-		<li>מאזין קול - AudioListener</li>
-		<li>קובץ קול - AudioClip</li>
-	</ul>
-
-	</section>
-</section>
-
-<section>
-<h1>ממשק משתמש</h1>
-<h2>UI Canvas</h2>
-	<ul>
-		<li>רכיב טקסט</li>
-		<li>לחצן - Button</li>
-	</ul>
-</section>
-
-<section>
-<h1>ממשק משתמש</h1>
-<h2>ניהול סצינות</h2>
-	<ul>
-		<li>סדר הבניה - build order</li>
-		<li>טוען הסצינות - SceneManager</li>
-		<li>שמירת מידע בין סצינות - דגם סינגלטון</li>
-	</ul>
 </section-->
 
 
