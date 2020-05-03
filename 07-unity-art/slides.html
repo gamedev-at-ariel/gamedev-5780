@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		<title>פיתוח משחקי מחשב - יוניטי - רכיבים אומנותיים</title>
+		<title>פיתוח משחקי מחשב - יוניטי - רכיבים דרמטיים</title>
 
 		<link rel="stylesheet" href="../revealjs/css/reset.css" />
 		<link rel="stylesheet" href="../revealjs/css/reveal.css" />
@@ -22,36 +22,55 @@
 	<h1>פיתוח
 	<br/>
 		משחקי מחשב</h1>
-	<h2> מנוע יוניטי - רכיבים אומנותיים</h2>
+	<h2> מנוע יוניטי - רכיבים דרמטיים</h2>
 	<p>אראל סגל-הלוי</p>
 </section>
 
+<section>
+<h1>רכיבים דרמטיים</h1>
+	<ul>
+	<li> הנפשה - Animation</li>
+	<li>שמע - Audio</li>
+	<li>ממשק משתמש - UI</li>
+	<li>סרטים - VideoClip (?)</li>
+	</ul>
+</section>
 
 
 <section>
-<h1>רכיבים אמנותיים</h1>
+<h1>הנפשה</h1>
 	<section>
-		<h2>הנפשה - Animation</h2>
-	<ul>
-		<li>מאפיינים - Properties</li>
-		<li>רגעי מפתח - Key</li>
-		<li>בקר הנפשה - Animator</li>
-		<li>הנפשת דמויות - Sprite Animation</li>
-		<li>תנאי מעבר מצב - Transition Condition</li>
-		<li>אירועים - Events</li>
+	<h2>מושגים:</h2>
+	<ul class="smaller">
+	<li>Timeline - ציר הזמן.</li>
+	<li>Animation Clip - סדרת שינויי מאפיינים על ציר-הזמן.</li>
+	<li>Keyframe - רגע על ציר-הזמן שבו קובעים את ערכי המאפיינים.</li>
+	<li>Animator Controller - מכונת מצבים של מעברים בין קטעי הנפשה.</li>
+	<li>Animator Component - רכיב המקשר בקר-הנפשה לעצם-משחק.</li>
 	</ul>
 	</section>
 
 	<section>
-		<h2>שמע - Audio</h2>
+	<h2>הנפשה וסקריפטים</h2>
+	<ul>
+<!--	<li>Animator Parameter - פרמטר הקובע מעבר בין מצבים.</li>-->
+	<li>תנאי מעבר מצב - Transition Condition - הקוד משפיע על האנימציה</li>
+	<li>אירועים - Events - האנימציה משפיעה על הקוד</li>
+	</ul>
+	</section>
+
+</section>
+
+<!--		<li>הנפשת דמויות - Sprite Animation</li>-->
+
+<section>
+	<h1>שמע - Audio</h1>
+	<h2>מושגים:</h2>
 	<ul>
 		<li>מקור קול - AudioSource</li>
 		<li>מאזין קול - AudioListener</li>
 		<li>קובץ קול - AudioClip</li>
 	</ul>
-
-	</section>
-</section>
 
 <section>
 <h1>ממשק משתמש</h1>
