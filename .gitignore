@@ -1,2 +1,5 @@
+# NOTE: This .gitignore file is only for the course material.
+# The .gitignore file for Unity projects is MUCH larger.
+# See folder 05, file gitignore-and-gitattributes.zip.
 .idea
 IGDPD*.ppt
