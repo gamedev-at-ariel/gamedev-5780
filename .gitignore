@@ -3,3 +3,4 @@
 # See folder 05, file gitignore-and-gitattributes.zip.
 .idea
 IGDPD*.ppt
+~*
