@@ -28,8 +28,8 @@
 
 <section>
 <h1>פיסיקה</h1>
-
-<ul>
+<p>המטרה: בניית עולם מציאותי.</p>
+<ul class="blue">
 	<li>קינמטיקה = התנועה של גוף במרחב ובזמן.</li>
 	<li>דינמיקה = הכוחות הגורמים לתנועה.</li>
 </ul>
@@ -38,11 +38,125 @@
 
 <section>
 	<h1>קינמטיקה</h1>
-	<p class="blue">קינמטיקה = ניתוח התנועה של גוף במרחב ובזמן.</p>
+	<section>
+	<p class="blue">קינמטיקה = התנועה של גוף במרחב ובזמן.</p>
+	<ul>
+		<li>מיקום - position:
+			<div dir="ltr" style='text-align:left;font-size:smaller'>x, y, z &nbsp;&nbsp;  [meter]</div>
+		</li>
+		<li>מהירות - velocity:
+			<div dir="ltr" style='text-align:left;font-size:smaller'>
+				v<sub>x</sub> = &Delta;x / &Delta;t  &nbsp;&nbsp;
+				v<sub>y</sub> = &Delta;y / &Delta;t  &nbsp;&nbsp; 
+				v<sub>z</sub> = &Delta;z / &Delta;t  &nbsp;&nbsp;   [meter/sec]
+			</div> 
+		</li>
+		<li>תאוצה - acceleration:
+			<div dir="ltr" style='text-align:left;font-size:smaller'>
+				a<sub>x</sub> = &Delta;v<sub>x</sub> / &Delta;t  &nbsp;&nbsp;
+				a<sub>y</sub> = &Delta;v<sub>y</sub> / &Delta;t  &nbsp;&nbsp; 
+				a<sub>z</sub> = &Delta;v<sub>z</sub> / &Delta;t   &nbsp;&nbsp;  [meter/sec<sup>2</sup>]
+			</div>
+		</li>
+		<li>תאוצת הכבידה על פני כדור הארץ:
+			<div dir="ltr" style='text-align:left;font-size:smaller'>
+			a<sub>x</sub> = 0               &nbsp;&nbsp;
+			a<sub>y</sub> &cong; -10  &nbsp;&nbsp;
+			a<sub>z</sub> = 0   &nbsp;&nbsp;  [meter/sec<sup>2</sup>]
+		</div>
+	</li>
+	</ul>
+	</section>
+	<section>
+		<p class="blue">אדם קופץ מהרצפה. מהירותו ברגע הקפיצה: 20 מטר/שניה.</p>
+		<ol>
+			<li class="fragment">תוך כמה זמן יעצור?
+				<div class="fragment" dir="ltr">&Delta; v / a = &Delta; t </small></div>
+				<div class="fragment" dir="ltr">-20 <small>[m/s]</small> / -10 <small>[m/s<sup>2</sup>]</small> = 2 <small>[s]</small></div>
+			</li>
+			<li class="fragment">לאיזה גובה יגיע?
+				<div class="fragment" dir="ltr">v * &Delta; t = &Delta; x </small></div>
+				<div class="fragment" dir="ltr">(20+0)/2 <small>[m/s]</small> * 2 <small>[s]</small> = 20 <small>[m]</small></div>
+				<div class="fragment" dir="ltr">v<sup>2</sup> / (2 a)  = &Delta; x</div>
+				<div class="fragment" dir="ltr">a * (&Delta; t)<sup>2</sup> / 2 = &Delta; x</div>
+			</li>
+			<!--li class="fragment">תוך כמה זמן יחזור לאדמה?
+				<div class="fragment" dir="ltr">
+					<div class="fragment" dir="ltr">&Delta; x = a (&Delta; t)<sup>2</sup>/2 </small></div>
+					<div class="fragment" dir="ltr">- 20 = - 10 (&Delta; t)<sup>2</sup>/2 </small></div>
+					<div class="fragment" dir="ltr">&Delta; t = 2 </small></div>
+				</div>
+			</li-->
+		</ol>
+	</section>
+	<section>
+		<p class="blue">
+			CharacterController  - רכיב למשחק עם קינמטיקה בלבד (ללא כוחות):</p>
+		<ul>
+			<li>אפשר להזיז אותו בעזרת השיטה Move;</li>
+			<li>הוא לא עובר דרך Collider פיסיקלי;</li>
+			<li>הוא יכול לטפס על מדרגות עד גובה מסויים, ועל שיפועים עד זוית מסוימת;</li>
+			<li>כל השאר - על אחריותנו.</li>
+		</ul>
+
+	</section>
 </section>
 	
 <section>
 	<h1>דינמיקה</h1>
+	<section>
+	<p class="blue">דינמיקה = הכוחות הגורמים לתנועה.</p>
+	<ul>
+		<li>כוח - Force;  &nbsp;&nbsp;&nbsp; מסה - mass:
+			<div dir="ltr" style='text-align:left'>
+				F<sub>x</sub>, F<sub>y</sub>, F<sub>z</sub> [Newton];   &nbsp;&nbsp;&nbsp;  m [kg]
+			</div>
+		</li>
+		<li><em>החוק השני של ניוטון:</em>
+			התאוצה של גוף עומדת ביחס ישר לסכום הכוחות הפועלים עליו:
+			<div dir="ltr" style='text-align:left'>
+				a = (&Sum;F) / m
+			</div>
+		</li>
+		<li><em>החוק השלישי של ניוטון:</em>
+			<div>
+			אם גוף א מפעיל כוח 
+			F
+			 על גוף ב,</div>
+			 <div>
+			אז גוף ב מפעיל כוח 
+			<span dir="ltr">-F</span>
+			על גוף א.</div>
+		</li>
+	</li>
+	</section>
+
+	<section>
+		<p class="blue">
+			RigidBody [Dynamic] - 
+			רכיב למשחק עם כוחות.
+		</p>
+		<ul>
+			<li>AddForce - הוספת כוח;</li>
+			<li>AddTorque - הוספת כוח סיבובי;</li>
+		</ul>
+
+	</section>
+
+	</ul>
+</section>
+
+
+<section>
+<h1>רכיבים פיסיקליים</h1>
+
+
+<p>
+	<a href="https://philipptheprogrammer.itch.io/unity-tutorial-how-to-move-your-player">
+	השוואה בין דרכים שונות לגרום לשחקן לזוז
+	</a>
+</p>
+
 </section>
 	
 	
