@@ -80,13 +80,6 @@
 				<div class="fragment" dir="ltr">v<sup>2</sup> / (2 a)  = &Delta; x</div>
 				<div class="fragment" dir="ltr">a * (&Delta; t)<sup>2</sup> / 2 = &Delta; x</div>
 			</li>
-			<!--li class="fragment">תוך כמה זמן יחזור לאדמה?
-				<div class="fragment" dir="ltr">
-					<div class="fragment" dir="ltr">&Delta; x = a (&Delta; t)<sup>2</sup>/2 </small></div>
-					<div class="fragment" dir="ltr">- 20 = - 10 (&Delta; t)<sup>2</sup>/2 </small></div>
-					<div class="fragment" dir="ltr">&Delta; t = 2 </small></div>
-				</div>
-			</li-->
 		</ol>
 	</section>
 	<section>
@@ -132,34 +125,149 @@
 	</section>
 
 	<section>
+		<p class="blue">קוביה נעה במהירות 20 מטר לשניה, ומתנגשת בקוביה אחרת באותה מסה הנמצאת במנוחה.
+			לאחר ההתנגשות שתי הקוביות נעות יחד באותה מהירות. מהי מהירות זו?
+		</p>
+		<p class="smaller fragment">נסמן: F - הכוח המופעל על הקוביה הנחה;
+			&Delta;t - זמן ההתנגשות.
+		</p>
+		<ul dir="ltr" style="text-align:left">
+			<li class=fragment>
+				v = 0 + (F/m) * &Delta;t
+			</li>
+			<li class=fragment>
+				v = 20 - (F/m) * &Delta;t
+			</li>
+			<li class=fragment>
+				v = 20 / 2 = 10
+			</li>
+		</ul>
+	</section>
+
+	<section>
 		<p class="blue">
 			RigidBody [Dynamic] - 
 			רכיב למשחק עם כוחות.
 		</p>
 		<ul>
 			<li>AddForce - הוספת כוח;</li>
-			<li>AddTorque - הוספת כוח סיבובי;</li>
+			<li>AddTorque - הוספת כוח סיבובי.</li>
 		</ul>
+		
+		<div dir='ltr'>
+			<p class="blue">
+			ForceMode:
+			</p>
+		<ul class="smaller">
+			<li>Force: v += (F/m) * &Delta; t</li>
+			<li>Acceleration: v += (F) * &Delta; t</li>
+			<li>Impulse: v += (F/m) </li>
+			<li>VelocityChange: v += (F)</li>
+		</ul>
+		</div>
+		<p class="small">
+		<a href="https://philipptheprogrammer.itch.io/unity-tutorial-how-to-move-your-player">
+			השוואה בין דרכים שונות לגרום לשחקן לזוז
+			</a></p>
+		
+	</section>
 
+	<section>
+		<h2>חומרים פיסיקליים</h2>
+		ניתן להצמיד לכל מתנגש, חומר פיסיקלי עם מאפיינים:
+		<ul>
+			<li>Bounciness - מקדם האלסטיות:
+				0 = פלסטיק, 1 = גומי.
+			</li>
+			<li>Friction = מקדם החיכוך: 
+				0 = קרח, 1 = דבק.
+				<ul class="smaller" style="margin-right:1em">
+					<li>Dynamic Friction - כוח הפועל על גוף הנע על משטח, בניגוד לכיוון התנועה.</li>
+					<li>Static Friction - כוח הפועל על גוף הנח על משטח, בניגוד לכיוון הכוחות המנסים להניע אותו.</li>
+				</ul>
+			</li>
+		</ul>
+		<p class="red smaller">הערה: Drag = כוח הפועל על גוף הנע דרך 
+			<em>נפח</em>, בניגוד לכיוון התנועה;</p>
 	</section>
 
 	</ul>
 </section>
+</section>
+
+<section>
+	<h1>התנגשויות פיסיקליות</h1>
+	<section>
+		<h2>אירוע התנגשות פיסיקלי - Collision</h2>
+		<ul>
+			<li>collision.collider - במי התנגשנו;</li>
+			<li>collision.velocity - באיזו מהירות;</li>
+			<li>collision.impulse - באיזה כוח*זמן;</li>
+		</ul>
+	</section>
+	<section>
+		<h2>שליחת קרניים - RayCasting</h2>
+		ניתן לשלוח מעין "קרן לייזר" מנקודה מסויימת לכיוון מסויים,
+		ולבדוק באיזה מתנגש/ים היא פגעה.
+		<ul>
+			<li>במנוע הדו-ממדי:
+				<a href="https://docs.unity3d.com/ScriptReference/Physics2D.Raycast.html">Physics2D.Raycast</a>
+				<br/>	 (הפגיעה הראשונה / כל הפגיעות).
+			</li>
+			<li>
+				<a href="https://docs.unity3d.com/ScriptReference/Physics.Raycast.html">Physics.Raycast</a> (הפגיעה הראשונה) /
+				<a href="https://docs.unity3d.com/ScriptReference/Physics.RaycastAll.html">Physics.RaycastAll</a> (כל הפגיעות).
+			</li>
+		</ul>
+		<p class="red">Debug.DrawRay - ציור קרן בחלון הסצינה בלבד.</p>
+	</section>
+
+</section>
 
 
 <section>
-<h1>רכיבים פיסיקליים</h1>
+	<section>
+		<h1>רכיבים פיסיקליים</h1>
+		<ul>
+			<li>Effector - רכיב המפעיל כוח.</li>
+			<li>Joint - רכיב המחבר שני גופים.</li>
+		</ul>
+	</section>
 
+	<section>
+		<h2>אפקטורים - מפעילי כוח</h2>
+		<ol>
+			<li>SurfaceEffector - משטח - למשל סרט נע <span class="small">(collision collider)</span>.</li>
+			<li>AreaEffector - איזור - למשל רוח  <span class="small">(trigger collider)</span>.</li>
+			<li>PointEffector - נקודה - למשל מגנט <span class="small">(collision collider + trigger collider)</span>.</li>
+			<li>BuoyancyEffector - ציפה - למשל מים או ג'לי  <span class="small">(trigger collider)</span>.</li>
+			<li>PlatformEffector - פלטפורמה - כמו  <a href="https://www.youtube.com/watch?v=G7dRrWOmMvI">כאן</a> <span class="small">(collision collider)</span>.</li>
+		</ol>
+	</section>
 
-<p>
-	<a href="https://philipptheprogrammer.itch.io/unity-tutorial-how-to-move-your-player">
-	השוואה בין דרכים שונות לגרום לשחקן לזוז
-	</a>
+	<section>
+		<h2>מחברים</h2>
+		<ol>
+			<li>DistanceJoint - מוט באורך קבוע.</li>
+			<li>SpringJoint - קפיץ (F = k*x).</li>
+			<li>HingeJoint - ציר.</li>
+			<li>SliderJoint - החלקה - למשל דלת הזזה.</li>
+			<li>WheelJoint - גלגל.</li>
+		</ol>
+	</section>
+
+</section>	
+
+<section>
+<h1>פיסיקה - סיכום</h1>
+<p class="blue">
+	המנוע הפיסיקלי של יוניטי נותן לכם המון כלים לעיצוב עולם מציאותי או דמיוני.
+</p>
+<p class="red">
+איזה עולם תעצבו? זה בידיים שלכם.
 </p>
 
 </section>
-	
-	
 
 </div>
 </div>
