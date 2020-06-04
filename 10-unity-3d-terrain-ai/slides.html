@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<title>פיתוח משחקי מחשב - אלגוריתמים בשלושה ממדים</title>
+
+		<link rel="stylesheet" href="../revealjs/css/reset.css" />
+		<link rel="stylesheet" href="../revealjs/css/reveal.css" />
+		<link rel="stylesheet" href="../revealjs/css/theme/black.css" />
+		<link rel="stylesheet" href="../revealjs/lib/css/monokai.css" />		<!-- Theme used for syntax highlighting of code -->
+
+		<link rel="stylesheet" href="../utils/slides.css" />
+	</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<section class="firstslide">
+	<h1>פיתוח
+	<br/>
+		משחקי מחשב</h1>
+	<h2>אלגוריתמים בשלושה ממדים</h2>
+	<p>אראל סגל-הלוי</p>
+</section>
+
+<section>
+<h1>עולם תלת-ממדי</h1>
+
+<section>
+	<h2>אתגרים:</h2>
+	<ol>
+	<li>בניית העולם.</li>
+	<li>ניווט בעולם.</li>
+	<li>בקרת דמות השחקן - PC.</li>
+	<li>בקרת דמויות שאינן השחקן - NPC.</li>
+</ol>
+</section>
+
+<section>
+	<h2>כלים:</h2>
+	<ol>
+		<li>בניית העולם - Terrain, ProGrids.</li>
+		<li>ניווט בעולם - NavMesh.</li>
+		<li>בקרת דמות השחקן - CharacterController / NavMeshAgent.</li>
+		<li>בקרת NPC - רכיבי התנהגויות ורכיב ניהול.</li>
+	</ol>
+</section>
+
+<section>
+	<h2 class="red">אתגרים מיוחדים בתלת-ממד:</h2>
+	<ol>
+		<li>בניית העולם - קבצים גדולים.</li>
+		<li>תרגום תנועת מקלדת 2-ממדית לתנועה בעולם 3-ממדי.</li>
+		<li>תרגום הקלקה על מסך 2-ממדי לבחירת נקודה 3-ממדית.</li>
+		<li>זיהוי קו-ראיה וקו-יריה.</li>
+	</ol>
+</section>
+
+<section>
+	<h2 class="red" style="margin-top:-1em">פתרונות:</h2>
+	<ol>
+		<li>הקטנת הקבצים - TreeSize, ImageResizer.</li>
+		<li>תרגום תנועת מקלדת - סיבוב אופקי ואנכי ומצלמה.</li>
+		<li>תרגום הקלקה - הטלת קרניים RayCast.</li>
+		<li>זיהוי קו-ראיה וקו-יריה - RayCast.</li>
+	</ol>
+
+
+	<iframe class="quarter" src="https://www.youtube.com/embed/G9Otw12OUvE?start=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</section>
+
+</section>
+
+
+</div>
+</div>
+
+
+<script src="../revealjs/js/reveal.js"></script>
+<script src="../utils/slides.js"></script>
+
+</body>
+</html>
