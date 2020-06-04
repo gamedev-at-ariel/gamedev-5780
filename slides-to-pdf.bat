@@ -6,6 +6,8 @@ cd ../07-unity-art
 call decktape -s 1280x800 automatic slides.html slides.pdf
 cd ../08-unity-physics
 call decktape -s 1280x800 automatic slides.html slides.pdf
-cd ../09-unity-3dgames
+cd ../09-unity-tilemap-pathfinding
+call decktape -s 1280x800 automatic slides.html slides.pdf
+cd ../10-unity-3d-terrain-ai
 call decktape -s 1280x800 automatic slides.html slides.pdf
 pause
