@@ -10,6 +10,7 @@ td {vertical-align: middle}
 
 h1 {  color: var(--green);  }
 h2 {  color: var(--blue);  }
+h3 {  color: var(--green);  }
 
 .red   { color: var(--red); }
 .green { color: var(--green); }
