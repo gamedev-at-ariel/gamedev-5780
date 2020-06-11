@@ -9,13 +9,15 @@
 את אלה בדקתי:
 
 -   [My abandon-ware](https://www.myabandonware.com/) –
- מעל 10,000 משחקים ישנים שהמפתחים נטשו אותם, ועכשיו אפשר להוריד אותם באופן חוקי בחינם.
+מעל 10,000 משחקים ישנים שהמפתחים נטשו אותם, ועכשיו אפשר להוריד אותם באופן חוקי בחינם.
 
 -   [Interactive Fiction Database](https://ifdb.tads.org/viewcomp?id=p6s9uem6td8rfihv) –
  משחקי טקסט – החמישים הטובים ביותר בכל הזמנים. למי שמעדיף סיפור טוב על-פני גרפיקה.
 
 -   [Board game arena](Board%20game%20arena) – 
 מעל 100 משחקי-לוח ישנים וחדשים אונליין.
+
+- [משחק השבת](https://closeapp.co.il/apps/pash/) - מאות משחקים על פרשת השבוע.
 
 -   [List of Chess Variants](https://en.wikipedia.org/wiki/List_of_chess_variants) - 
  מעל 1000 גירסאות של שחמט בויקיפדיה, בחלקן אפשר לשחק אונליין ובחלקן צריך לוח  ממש.
