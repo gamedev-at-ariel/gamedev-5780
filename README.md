@@ -20,10 +20,14 @@
 
 * [קורסים אחרים בארץ ובעולם](other-courses.md)
 
-המצגות של הקורס יעלו לכאן בהדרגה.
-כדי לצפות במצגות, צריך להוריד את כל המאגר למחשב שלכם,
+די לצפות במצגות, צריך להוריד את כל המאגר למחשב שלכם,
 ולפתוח את הקובץ
 slides.html
 בדפדפן כלשהו.
+
+## תודות
+הקורס פותח בעזרתם של הסטודנטים: מעוז גרוסמן, מיכאל למברגר, אור הדר, וגיא לנקרי. 
+
+חלק מהחומר על יוניטי נלמד מקורסים ביודמי: [Unity 2D](https://www.udemy.com/course/unitycourse/learn/lecture/10248514),  [Unity 3D](https://www.udemy.com/course/unitycourse2/learn/lecture/8859276),  [Unity RPG](https://www.udemy.com/course/unityrpg/learn/lecture/14593312).
 
 </div>
